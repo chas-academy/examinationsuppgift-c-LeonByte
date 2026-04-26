@@ -1,6 +1,7 @@
 //Write your code in this file
 
 #include <stdio.h>
+#include <ctype.h>
 
 #define STUDENTS 5
 #define TESTS 13
@@ -37,6 +38,18 @@ int main(){
     for (int i = 1; i < STUDENTS; i++) {
         if (average[i] > average[best]) {
             best = i;
+        }
+    }
+
+    for (int i = 0; i < STUDENTS; i++) {
+        name[i][0] = toupper(name[i][0]);
+    }
+
+    printf("%s\n", name[best]);
+
+    for (int i = 0; i < STUDENTS; i++) {
+        if (average[i] < group_average) {
+            printf("%s\n", name[i]);
         }
     }
 
