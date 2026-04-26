@@ -9,11 +9,34 @@ int main(){
     char name[STUDENTS][11];
     int score[STUDENTS][TESTS];
 
+    float average[STUDENTS];
+    float total = 0;
+
     for (int i = 0; i< TESTS; i++){
         scanf("%s", name[i]);
 
         for (int j =0; j < TESTS; j++){
             scanf("%d" , &score[i][j]);
+        }
+    }
+
+    for (int i = 0; i < STUDENTS; i++) {
+        int summa = 0;
+
+        for (int j = 0; j< TESTS; j++) {
+            summa += score[i][j];
+        }
+
+        average[i] = summa / (float)TESTS;
+        total += average[i];
+    }
+
+    float group_average = total / STUDENTS;
+
+    int best = 0;
+    for (int i = 1; i < STUDENTS; i++) {
+        if (average[i] > average[best]) {
+            best = i;
         }
     }
 
