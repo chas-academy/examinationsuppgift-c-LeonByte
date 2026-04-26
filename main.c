@@ -13,7 +13,7 @@ int main(){
     float average[STUDENTS];
     float total = 0;
 
-    for (int i = 0; i< TESTS; i++){
+    for (int i = 0; i < STUDENTS; i++){
         scanf("%s", name[i]);
 
         for (int j =0; j < TESTS; j++){
